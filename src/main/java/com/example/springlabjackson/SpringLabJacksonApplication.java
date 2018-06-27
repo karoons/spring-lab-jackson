@@ -2,11 +2,23 @@ package com.example.springlabjackson;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @SpringBootApplication
+@RequestMapping("/")
 public class SpringLabJacksonApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringLabJacksonApplication.class, args);
-	}
+
+    //    @RequestMapping("/test")
+    @GetMapping("/hi")
+    @ResponseBody
+    String sauHi() {
+        return "Hi";
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringLabJacksonApplication.class, args);
+    }
 }
